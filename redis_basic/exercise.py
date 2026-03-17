@@ -11,7 +11,7 @@ class Cache:
     """
     A class with __init__ method and a private variable
     """
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Method that initializes redis instance and flushes the db
         """
