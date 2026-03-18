@@ -2,7 +2,6 @@
 """
 This module has a Cache class with __init__ method and a private variable 
 """
-import redis
 import uuid
 from typing import Union
 
