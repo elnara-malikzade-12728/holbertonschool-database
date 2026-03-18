@@ -15,6 +15,8 @@ class Cache:
         """
         Method that initializes redis instance and flushes the db
         """
+        import redis
+        
         self._redis = redis.Redis()
         self._redis.flushdb()
 
