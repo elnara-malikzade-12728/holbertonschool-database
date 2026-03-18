@@ -3,7 +3,7 @@
 This module has a Cache class with __init__ method and a private variable 
 """
 import uuid
-from typing import Union
+from typing import Union, Callable, Optional
 
 
 class Cache:
@@ -27,3 +27,9 @@ class Cache:
         self._redis.set(key, data)
 
         return key
+    
+    def get(self, key: str, fn: Optional[Callable] = None) -> Union[int, bytes, float, str, None]:
+        data = self._redis.get(key)
+        if key is not None and fn is not None:
+            return fn(data) 
+        return data
