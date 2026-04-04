@@ -1,0 +1,3 @@
+// script to find all documents in the collection
+use my_db
+db.school.find()
