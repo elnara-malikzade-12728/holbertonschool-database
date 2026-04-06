@@ -1,4 +1,7 @@
-// a Python function insert_school
+#!/usr/bin/env python3
+"""
+a Python function insert_school
+"""
 
 
 def insert_school(mongo_collection, **kwargs):
