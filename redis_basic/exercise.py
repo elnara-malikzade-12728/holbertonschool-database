@@ -95,9 +95,9 @@ class Cache:
         count_int = int(count.decode("utf-8")) if count else 0
 
         inputs = r.lrange(f"{name}:inputs", 0, -1)
-        outputs = r.lrange(f"{name}:outputs" 0, -1)
+        outputs = r.lrange(f"{name}:outputs", 0, -1)
 
         for inp, out in zip(inputs, outputs):
-            print(f"{name}(*{inp.decode("utf-8")} -> {out.decode("utf-8")})")
+            print(f"{name}(*{inp.decode('utf-8')} -> {out.decode('utf-8')})")
     
     
