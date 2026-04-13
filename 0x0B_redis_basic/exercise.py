@@ -46,14 +46,15 @@ def replay(method: Callable) -> None:
     """
     r = method.__self__._redis
     name = method.__qualname__
-    count = r.get(name)
-    count_int = int(count.decode("utf-8")) if count else 0
+    count = r.get(name).decode('utf-8') if r.get(name) else '0'
 
     inputs = r.lrange(f"{name}:inputs", 0, -1)
     outputs = r.lrange(f"{name}:outputs", 0, -1)
 
+    print(f"{name} was called {count} times:")
+
     for inp, out in zip(inputs, outputs):
-        print(f"{name}(*{inp.decode('utf-8')} -> {out.decode('utf-8')})")
+        print(f"{name}(*{inp.decode('utf-8')})")
 
 
 class Cache:
