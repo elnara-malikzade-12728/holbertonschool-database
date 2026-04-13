@@ -1,3 +1,2 @@
 // add a new attribute to a document
-use my_db
-db.school.insertOne({address: "922 Mission Street"})
+db.school.insertMany({address: "922 Mission Street"})
